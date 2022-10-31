@@ -2,10 +2,10 @@
 # vi: set ft=ruby :
 
 nodes = {
-  "server0" => { :vm_id => "server0", :ip => "192.168.56.200", :cpus => 1, :mem => 4096, :box => "generic/rocky8"},
-  "server1" => { :vm_id => "server1", :ip => "192.168.56.201", :cpus => 1, :mem => 2048, :box => "generic/rocky8"},
-  "server2" => { :vm_id => "server2", :ip => "192.168.56.202", :cpus => 1, :mem => 2048, :box => "generic/rocky8"},
-  "server3" => { :vm_id => "server3", :ip => "192.168.56.203", :cpus => 1, :mem => 2048, :box => "generic/rocky8"}
+  "server0" => { :vm_id => "server0", :ip => "192.168.56.200", :cpus => 1, :mem => 4096, :box => "generic/rocky9"},
+  "server1" => { :vm_id => "server1", :ip => "192.168.56.201", :cpus => 1, :mem => 2048, :box => "generic/rocky9"},
+  "server2" => { :vm_id => "server2", :ip => "192.168.56.202", :cpus => 1, :mem => 2048, :box => "generic/rocky9"},
+  "server3" => { :vm_id => "server3", :ip => "192.168.56.203", :cpus => 1, :mem => 2048, :box => "generic/rocky9"}
 }
 
 Vagrant.configure("2") do |config|
@@ -37,7 +37,6 @@ Vagrant.configure("2") do |config|
         vb.customize ["modifyvm", :id, "--nic2", "hostonly", "--cableconnected2", "on", "--hostonlyadapter2", "VirtualBox Host-Only Ethernet Adapter"]
         vb.customize ["modifyvm", :id, "--ioapic", "on"]
         vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-
       end
     end
   end
